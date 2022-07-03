@@ -1,8 +1,8 @@
-====
-REPL 
-====
+===========
+Simple REPL
+===========
 
-Simple REPL demo.
+Simple REPL demo to try standard library.
 
 Playground
 ==========
