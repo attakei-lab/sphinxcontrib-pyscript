@@ -18,6 +18,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
-      - run: poetry install
-      - run: poetry run black --check .
-      - run: poetry run pytest
+      - name: Configure
+        run: |
+          poetry env use "${{ matrix.python-version }}"
+          poetry install
+      - name: Lint
+        run: |
+          poetry run black --check .
+      - name: Test
+        run: |
+          poetry run pytest
